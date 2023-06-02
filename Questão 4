@@ -1,0 +1,67 @@
+class Produto:
+    def __init__(self, preco, ano_lancamento, tipo_produto):
+        self.preco = preco
+        self.ano_lancamento = ano_lancamento
+        self.tipo_produto = tipo_produto
+        
+    def produto_desconto(self):
+        pass
+
+    def prazo_desconto(self):
+        pass
+
+
+class Livro(Produto):
+    def __init__(self, preco, ano_lancamento, tipo_produto):
+        super().__init__(preco, ano_lancamento, tipo_produto)
+
+    def produto_desconto(self):
+        print("O produto possui desconto de 10%.")
+
+    def prazo_desconto(self):
+        print("O prazo para compra com desconto vai até 10/06/2023.")
+
+class CD(Produto):
+    def __init__(self, preco, ano_lancamento, tipo_produto):
+        super().__init__(preco, ano_lancamento, tipo_produto)
+
+    def produto_desconto(self):
+        print("O produto possui desconto de 10%..")
+
+    def prazo_desconto(self):
+        print("O prazo para compra com desconto vai até 10/06/2023.")
+
+class DVD(Produto):
+    def __init__(self, preco, ano_lancamento, tipo_produto):
+        super().__init__(preco, ano_lancamento, tipo_produto)
+
+    def produto_desconto(self):
+        print("O produto possui desconto de 10%.")
+
+    def prazo_desconto(self):
+        print("O prazo para compra com desconto vai até 10/06/2023.")
+
+
+
+
+def main():
+    livro = Livro("O iluminado - Stephen King", "1977", "Livros.")
+    cd = CD("Nevermind - Nirvana", "1991", "CDS Rock - Anos 90")
+    dvd = DVD("O Poderoso Chefão", "1972", "Filmes - Anos 70")
+
+
+    produtos = [livro, cd, dvd]
+
+    for produto in produtos:
+        print(f"Nome do produto: {produto.preco}")
+        print(f"Ano de lançamento: {produto.ano_lancamento}")
+        print(f"Tipo de produto: {produto.tipo_produto}")
+        print('')
+        produto.produto_desconto()
+        produto.prazo_desconto()
+        print('-----------------------------------------------------')
+        
+
+
+if __name__ == "__main__":
+    main()
