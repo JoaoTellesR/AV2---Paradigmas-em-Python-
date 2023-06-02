@@ -1,0 +1,32 @@
+dicionario_principal = {}
+backup_dicionario = []
+
+def criar_backup():
+    global dicionario_principal, backup_dicionario
+    backup_dicionario.append(dicionario_principal.copy())
+    dicionario_principal.clear()
+
+while True:
+    marca = input("Digite uma marca de carro: (ou digite 'N' para sair) " )
+    
+    if marca == 'N':
+        break
+    
+    ano = input("Digite o ano do carro: ")
+    
+    dicionario_principal[marca] = ano
+    
+    if len(dicionario_principal) == 5:
+        print('')
+        print("Dicionário Principal:")
+        print('')
+        for marca, ano in dicionario_principal.items():
+            print(marca, "-", ano)
+        criar_backup()
+        print('')
+        print("Backup (Concluído).")
+        print('')
+        print("--- Dicionário principal vazio ---")
+        print('')
+
+print("Dicionário concluído.")
