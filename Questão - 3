@@ -1,0 +1,76 @@
+class Automovel:
+    def __init__(self, marca, ano_do_veiculo):
+        self.marca = marca
+        self.ano_do_veiculo = ano_do_veiculo
+
+    def acima_de_100(self):
+        pass
+
+    def abaixo_de_100(self):
+        pass
+
+
+class Carro(Automovel):
+    def __init__(self, marca, ano_do_veiculo):
+        super().__init__(marca, ano_do_veiculo)
+
+    def acima_de_100(self):
+        print("O carro está acima de 100 km/h.")
+
+    def abaixo_de_100(self):
+        print("O carro está na velocidade permitida.")
+
+class Caminhao(Automovel):
+    def __init__(self, marca, ano_do_veiculo):
+        super().__init__(marca, ano_do_veiculo)
+
+    def acima_de_100(self):
+        print("O caminhão está está acima de 100 km/h.")
+
+    def abaixo_de_100(self):
+        print("O caminhão está na velocidade permitida.")
+
+class Caminhonete(Automovel):
+    def __init__(self, marca, ano_do_veiculo):
+        super().__init__(marca, ano_do_veiculo)
+
+    def acima_de_100(self):
+        print("O caminhonete está acima de 100 km/h.")
+
+    def abaixo_de_100(self):
+        print("O caminhonete está na velocidade permitida.")
+
+
+class Moto(Automovel):
+    def __init__(self, marca, ano_do_veiculo):
+        super().__init__(marca, ano_do_veiculo)
+
+    def acima_de_100(self):
+        print("A moto está acima de 100 km/h.")
+
+    def abaixo_de_100(self):
+        print("A moto está na velocidade permitida.")
+
+
+
+
+
+def main():
+    carro = Carro("Porshe", "2019")
+    moto = Moto("BMW", "2021")
+    caminhao = Caminhao("Volkswagen", "2009")
+    caminhonete = Caminhonete("Nissan", "2017")
+
+
+    automoveis = [carro, caminhao, caminhonete, moto]
+
+    for automovel in automoveis:
+        print(f"Marca: {automovel.marca}")
+        print(f"Ano do automóvel: {automovel.ano_do_veiculo}")
+        automovel.acima_de_100()
+        automovel.abaixo_de_100()
+        print('')
+
+
+if __name__ == "__main__":
+    main()
