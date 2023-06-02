@@ -1,0 +1,42 @@
+def cadastro_cliente():
+    cliente = {}
+    cliente['nome'] = input('Digite o nome do cliente: ')
+    cliente['idade'] = int(input('Digite a idade do cliente: '))
+    cliente['cpf'] = input('Digite o CPF do cliente: ')
+    return cliente
+
+def main():
+    
+    clientes = []
+    menor_18 = []
+
+    quantidade = int(input('Quantos clientes serão cadastrados: '))
+
+    
+    for _ in range(quantidade):
+        print('')
+        cliente = cadastro_cliente()
+        clientes.append(cliente)
+        print('')
+
+    for cliente in clientes:
+        if cliente['idade'] < 18:
+            menor_18.append(cliente)
+    for menores in menor_18:
+        clientes.remove(menores)
+
+    print('')
+
+    print('Lista- Clientes maiores de 18 anos:')
+    print('')
+    for clientes in clientes:
+        print(cliente)
+    print('')
+
+    print('Lista - Clientes menores de 18 anos:')
+    print('')
+    for menores in menor_18:
+        print(menores)
+
+if __name__ == '__main__':
+    main()
